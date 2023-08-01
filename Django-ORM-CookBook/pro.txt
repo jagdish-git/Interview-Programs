@@ -1,0 +1,34 @@
+String str = "aabbrrder";
+	Set<Character> set = new HashSet<>();
+	for(int i =0;i<str.length();i++) {
+		set.add(str.charAt(i));
+	}
+	for(Character word:set) {
+		System.out.println(set);
+	}
+	    }
+
+
+
+capitalize the first letter of word
+
+String str = "i like java";
+	String st ="";
+	String f ="";
+	String sum="";
+	String[] d = str.split(" ");
+	for(String ch :d) {
+		st= ch.substring(0,1).toUpperCase();
+		f = ch.substring(1);
+		sum = sum + st + f +" ";
+		
+	}
+	System.out.println(sum);
+	
+	}
+	    }
+Remove special character
+	String str = "i#like &&%$java";
+	String st = str.replaceAll("[^a-zA-Z0-9]","");
+	System.out.println(st);
+	

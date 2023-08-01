@@ -1,0 +1,26 @@
+ORM Based Questions ~>
+from django.contrib.auth.models import User
+from django.db import models
+
+class CUser(User):
+    score = models.IntegerField()
+
+The custom user has an additional field (score), we want to do the following operations using ORM queries only. Every answer must have a single query:
+
+1.Calculate the mean score of all users.(average)
+2.Find the user with the highest score.
+3.Find if there is any user with score less than 2 (return True/False)
+4.Find all the users which have score exactly equal to the mean score.
+5.Change the score value of all users in a single query to 100 (one hundred)
+6.Find all the users which don't have score 10 or 20
+7.Print a list of all the score values from all users excluding the first 10 users.
+
+Answers:
+1 Cuser.objects.all().aggregate(Avg('score'))
+2 Cuser.objects.all().aggregate(Max('sccore'))
+	Cuser.objects.all().order_by('-score')[0]
+3 Cuser.objects.filter(score__lt=2).exists()
+4 
+5 
+6 Cuser.objects.filter(~Q(score__in = 10) | ~Q(score__in=20))
+7 Cuser.objects.filter(score__gt=10)
