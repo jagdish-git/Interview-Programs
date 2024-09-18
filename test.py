@@ -1,33 +1,77 @@
-lst = [4,-2,7,-12,65,33,1,-89,-34,76,-3,2,-1]
-x = sorted(lst)
-n = []
-p = []
-for _ in x:
-    if _ > 0:
-        p.append(_)
-    else:
-        n.append(_)
-res = []
-for i,j in zip(n,p):
-    res.append(i)
-    res.append(j)
-print(res)
-
-# [1, 2, 4, 7, 33, 65, 76] [-89, -34, -12, -3, -2, -1]
-# [-89,1,-34,2,-12,4]
-# [[-89, 1], [-34, 2], [-12, 4], [-3, 7], [-2, 33], [-1, 65]]
+# balanced paranthesis
+# input: "hello world"
+# output: "d1r1w1o2l3e1h1"
 
 
 
+def count_num_words(strs):
+    dc = dict()
+    for i in strs:
+        if i != ' ':
+            # dc[i] = dc.get(i,0) + 1
+            if i in dc:
+                dc[i] += 1
+            else:
+                dc[i] = 1
 
-# prime number in between 100, 200
-li = []
-for i in range(100,200):
-    for j in range(2,i):
-        if i % j == 0:
-            break
-    else:
-        li.append(i)
-# print(li) 
+    
+    print(dc)
+    new = ''
+    for k in dc.keys():
+            new = k+str(dc[k]) + new
+    print(new)
 
-# [101, 103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163, 167, 173, 179, 181, 191, 193, 197, 199]
+count_num_words("hello world")
+
+
+
+def count_characters_reversed(input_string):
+    # Reverse the input string
+    reversed_string = input_string[::-1]
+    
+    # Dictionary to store the count of each character
+    char_count = {}
+    
+    # Count occurrences of each character
+    for char in reversed_string:
+        if char != ' ':  # Skip spaces
+            if char in char_count:
+                char_count[char] += 1
+            else:
+                char_count[char] = 1
+    
+    # Create the output string with counts
+    output = ''.join(f"{char}{count}" for char, count in char_count.items())
+    
+    return output
+
+# Test the function
+input_string = "hello world"
+output_string = count_characters_reversed(input_string)
+print(output_string)
+
+
+
+input_dict = {'h': 1, 'e': 1, 'r': 1, 'd': 1}
+reverse_dict = {key:value for key,value in sorted(input_dict.items(), reverse=True)}
+print(reverse_dict)
+
+# Original dictionary
+input_dict = {'h': 1, 'e': 1, 'r': 1, 'd': 1}
+
+# Reverse the dictionary by sorting keys in descending order
+reversed_dict = {k: input_dict[k] for k in sorted(input_dict, reverse=True)}
+
+
+print(reversed_dict)
+input_dict = {'h': 1, 'e': 1, 'l': 3, 'o': 2, 'w': 1, 'r': 1, 'd': 1}
+mn = ''
+ln = list(input_dict.keys())
+for key in reversed(ln):
+    mn += f"{key}{input_dict[key]}"
+
+
+print(mn)
+
+
+
