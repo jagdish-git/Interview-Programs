@@ -204,4 +204,23 @@ str1 = 'Prasnna interviwing Jagdish, If Jagdish qualify He will be move to final
 list1 = [0, 4, 6, 9, 8, 1, 3] 
 
 40) remove only first duplicate number in the list 
-lst = [5, 6, 3, 5, 7, 6, 1, 3, 6, 7]
+lst = [11, 5, 6, 3, 5, 7, 6, 1, 3, 6, 7]
+
+41) pattern program (pyramid)
+42) Easy pattern program
+43) Longest Substring Without Repeating Characters
+    Input: s = "abcabcbb"
+    Output: 3
+    Explanation: The answer is "abc", with the length of 3.
+
+44) Reverse the "jagdish" only on the above string
+string = "$@&*!%jagdish#@$@&"
+output = "$@&*!%hsidgaj#@$@&"
+
+45) Reverse only Characters
+string = "!!j@@a###g$$d**i&&s**h"
+output = "!!h@@s###i$$d**g&&a**j"
+
+46) reverse the string using two pointers
+string = "helloworld"
+output = "dlrowolleh"
